@@ -1,0 +1,14 @@
+{
+  "name": "express-example",
+  "version": "1.0.0",
+  "description": "A demonstration of building a Node.JS app without installing Node.JS using Docker",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tinco Andringa <tinco@phusion.nl>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
