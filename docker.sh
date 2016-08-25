@@ -32,6 +32,7 @@ function check_git() {
 
 function push() {
 	git push
+	docker tag $IMAGE_NAME $IMAGE_NAME:$TAG
 	docker push $IMAGE_NAME:$TAG
 }
 
