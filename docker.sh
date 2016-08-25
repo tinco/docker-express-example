@@ -14,9 +14,8 @@ function build_image() {
 }
 
 function test_image() {
+	# TODO does this exit if the tests fail?
 	run_image $TEST_COMMAND
-
-	# does this exit if the tests fail?
 }
 
 function check_git() {
@@ -25,19 +24,15 @@ function check_git() {
 		exit 1
 	fi	
 
-	git fetch
-
 	if [[ `git branch --no-color|grep "*"|awk '{ print $2 }'` != $TAG ]]; then
 		echo "Current branch is not $TAG, checkout and merge that branch before releasing."
 		exit 1
 	fi
-
-	# if origin/tag differs from tag branch exit
-	# with message: Current branch 
 }
 
 function push() {
-	echo "push"
+	git push
+	docker push $IMAGE_NAME:$TAG
 }
 
 case "$1" in
