@@ -4,12 +4,13 @@
   "description": "A demonstration of building a Node.JS app without installing Node.JS using Docker",
   "main": "app.js",
   "scripts": {
-    "test": "node test/test.js"
+    "test": "node node_modules/mocha/bin/mocha"
   },
   "author": "Tinco Andringa <tinco@phusion.nl>",
   "license": "MIT",
   "dependencies": {
     "express": "^4.14.0",
+    "mocha": "^3.0.2",
     "supertest": "^2.0.0"
   }
 }
