@@ -27,11 +27,9 @@ function check_git() {
 
 	git fetch
 
-	# if current branch differs from tag exit
-	# with message: Not currently on $TAG branch
-
 	if [[ `git branch --no-color|grep "*"|awk '{ print $2 }'` != $TAG ]]; then
-		echo "Current branch is not $TAG"
+		echo "Current branch is not $TAG, checkout and merge that branch before releasing."
+		exit 1
 	fi
 
 	# if origin/tag differs from tag branch exit
