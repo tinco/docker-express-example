@@ -1,7 +1,7 @@
 set -e
 
 export IMAGE_NAME=tinco/express-example
-export RUN_BUILD="docker run -it --rm -v $PWD:/usr/src/app tinco/alpine-build-node"
+export RUN_BUILD="docker run -it --rm -v $PWD:/usr/src/app node:6"
 export TEST_COMMAND="./node_modules/mocha/bin/mocha"
 
 function run_image() {

@@ -1,4 +1,2 @@
-FROM tinco/passenger-standalone-alpine-node:latest
-ADD . /usr/src/app
-RUN chown -R app:app /usr/src/app
+FROM node:6-onbuild
 
