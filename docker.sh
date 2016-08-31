@@ -1,8 +1,8 @@
 set -e
 
 export IMAGE_NAME=tinco/express-example
-export RUN_BUILD="docker run -it --rm -v $PWD:/usr/src/app -w /usr/src/app tinco/alpine-build-node"
-export TEST_COMMAND="./node_modules/mocha/bin/mocha test"
+export RUN_BUILD="docker run -it --rm -v $PWD:/usr/src/app tinco/alpine-build-node"
+export TEST_COMMAND="./node_modules/mocha/bin/mocha"
 
 function run_image() {
 	docker run -it --entrypoint /bin/sh $IMAGE_NAME -c $1
