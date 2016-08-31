@@ -1,2 +1,4 @@
-FROM node:6-onbuild
-
+FROM node
+ADD . /usr/src/app
+WORKDIR /usr/src/app
+CMD node app.js
